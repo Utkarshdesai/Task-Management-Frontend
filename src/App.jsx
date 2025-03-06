@@ -15,7 +15,7 @@ function App() {
     
 
     //create new task 
-    const createtask = await axios.post('http://localhost:3000/api/v1/task' , 
+    const createtask = await axios.post('https://task-management-backend-1-aeyv.onrender.com/api/v1/task' , 
       {title , description}
     )
     console.log(createtask)

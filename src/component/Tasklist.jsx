@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import Taskform from './Taskform'
+
 import axios from 'axios'  
 
 const Tasklist = () => {
@@ -16,7 +16,7 @@ const Tasklist = () => {
 
     //fetch task 
     const alltask = async () =>{
-        const data = await axios.get('http://localhost:3000/api/v1/task')
+        const data = await axios.get('https://task-management-backend-1-aeyv.onrender.com/api/v1/task')
        
         settasklist(data.data.alltask)
      }
@@ -32,7 +32,7 @@ const Tasklist = () => {
      //delete task 
      const deletetask = async (id) => {
        
-        const deletetask = await axios.delete(`http://localhost:3000/api/v1/task/${id}`) 
+        const deletetask = await axios.delete(`https://task-management-backend-1-aeyv.onrender.com/api/v1/task/${id}`) 
         console.log(deletetask)
          //update UI 
         settasklist(tasklist.filter((task) => task.id !== id)); 
@@ -52,7 +52,7 @@ const Tasklist = () => {
  
  const updatetask = async () => {
   
-    const updatetask = await axios.put(`http://localhost:3000/api/v1/task/${selectedTask}` , {title: edittitle , description:editdesc})
+    const updatetask = await axios.put(`https://task-management-backend-1-aeyv.onrender.com/api/v1/task/${selectedTask}` , {title: edittitle , description:editdesc})
     console.log(updatetask)
  }
 
